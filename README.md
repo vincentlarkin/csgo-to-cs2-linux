@@ -8,13 +8,13 @@ There was one catch: Valve's map tools only run on Windows, and this was done on
 
 ## What we accomplished
 
-It worked. Three old maps are now playable in CS2 and ready for the Workshop:
+It worked. Three old maps are now playable in CS2. Subscribe on the Steam Workshop and they show up in your game:
 
-| Map | Originally made by | What it is |
-| --- | --- | --- |
-| **awp_neon** | Pr0F | A neon AWP duel arena |
-| **aim_pyrocynical** | [Lefty](https://steamcommunity.com/sharedfiles/filedetails/?id=630383830) | A synthwave aim map with a glowing pink horizon and its own music |
-| **aim_legocity** | [Bunny](https://steamcommunity.com/sharedfiles/filedetails/?id=1564248936) | A Deagle aim map built out of giant Lego bricks |
+| Map | Originally made by | What it is | Play the CS2 version |
+| --- | --- | --- | --- |
+| **awp_neon** | Pr0F | A neon AWP duel arena | [awp_neon_cs2](https://steamcommunity.com/sharedfiles/filedetails/?id=3829888423) |
+| **aim_pyrocynical** | [Lefty](https://steamcommunity.com/sharedfiles/filedetails/?id=630383830) | A synthwave aim map with a glowing pink horizon and its own music | [aim_pyrocynical_cs2](https://steamcommunity.com/sharedfiles/filedetails/?id=3830492642) |
+| **aim_legocity** | [Bunny](https://steamcommunity.com/sharedfiles/filedetails/?id=1564248936) | A Deagle aim map built out of giant Lego bricks | Coming soon |
 
 Each one plays like the original:
 - Bots work.
