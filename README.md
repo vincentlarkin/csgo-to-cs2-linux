@@ -8,19 +8,21 @@ There was one catch: Valve's map tools only run on Windows, and this was done on
 
 ## What we accomplished
 
-It worked. Three old maps are now playable in CS2. Subscribe on the Steam Workshop and they show up in your game:
+It worked. Five old maps are now playable in CS2. Subscribe on the Steam Workshop and they show up in your game:
 
 | Map | Originally made by | What it is | Play the CS2 version |
 | --- | --- | --- | --- |
 | **awp_neon** | Pr0F | A neon AWP duel arena | [awp_neon_cs2](https://steamcommunity.com/sharedfiles/filedetails/?id=3829888423) |
 | **aim_pyrocynical** | [Lefty](https://steamcommunity.com/sharedfiles/filedetails/?id=630383830) | A synthwave aim map with a glowing pink horizon and its own music | [aim_pyrocynical_cs2](https://steamcommunity.com/sharedfiles/filedetails/?id=3830492642) |
 | **aim_legocity** | [Bunny](https://steamcommunity.com/sharedfiles/filedetails/?id=1564248936) | A Deagle aim map built out of giant Lego bricks | Coming soon |
+| **cs_assault_original** | CryptR (CS 1.6), [ClipoDEL](https://steamcommunity.com/sharedfiles/filedetails/?id=176312184) (CS:GO) | The classic hostage-rescue Assault, with its 1.6-style radar | Coming soon |
+| **de_assault** | [Vince](https://steamcommunity.com/sharedfiles/filedetails/?id=1762744147) | Assault reworked as a bomb-defusal map | Coming soon |
 
 Each one plays like the original:
 - Bots work.
 - The map has a radar.
 - Lighting and colours were matched to the old version.
-- In CS2's **Custom** game mode it uses the original rules: AWPs only, Deagles only, and so on.
+- The aim maps use their original rules in CS2's **Custom** game mode: AWPs only, Deagles only, and so on. The Assault maps play as normal hostage and bomb maps.
 - Other game modes are left alone.
 
 ## How it works, in plain terms

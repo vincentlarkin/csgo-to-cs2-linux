@@ -20,8 +20,14 @@ def block_end(ls, start):
     ind = indent_of(ls[start])
     return next(i for i in range(start + 2, len(ls)) if ls[i] in (ind + '}', ind + '},'))
 
-start = next(i for i, l in enumerate(lines) if l.strip() == '"CMapEntity"')
-end = block_end(lines, start)
+# clone a point entity: a brush entity's mesh children would come along, and their nested "origin"
+# lines would be the ones edited
+for start in (i for i, l in enumerate(lines) if l.strip() == '"CMapEntity"'):
+    end = block_end(lines, start)
+    if not any('"CMapMesh"' in l for l in lines[start:end]):
+        break
+else:
+    sys.exit('no point entity to clone')
 ent = [re.sub(r'"elementid" "[0-9a-f-]{36}"', lambda m: '"elementid" "%s"' % uuid.uuid4(), l)
        for l in lines[start:end + 1]]
 max_node = max(int(n) for n in re.findall(r'"nodeID" "int" "(\d+)"', src))
@@ -33,10 +39,11 @@ p0 = next(i for i, l in enumerate(ent) if '"entity_properties" "EditGameClassPro
 p1 = block_end(ent, p0)
 pid = next(l for l in ent[p0:p1] if '"elementid"' in l)
 ent[p0 + 2:p1] = [pid] + [indent_of(ent[p0]) + '\t"%s" "string" "%s"' % (k, v) for k, v in props]
-o = next(i for i, l in enumerate(ent) if re.match(r'^\t+"origin" "vector3" ', l))
+top = indent_of(ent[0]) + '\t'  # the entity's own keys, not those of nested elements
+o = next(i for i, l in enumerate(ent) if l.startswith(top + '"origin" "vector3" '))
 ent[o] = indent_of(ent[o]) + '"origin" "vector3" "%s"' % origin
 if angles:
-    a = next(i for i, l in enumerate(ent) if re.match(r'^\t+"angles" "qangle" ', l))
+    a = next(i for i, l in enumerate(ent) if l.startswith(top + '"angles" "qangle" '))
     ent[a] = indent_of(ent[a]) + '"angles" "qangle" "%s"' % angles
 c = next(i for i, l in enumerate(ent) if '"connectionsData" "element_array"' in l)
 cend = next(i for i in range(c + 1, len(ent)) if ent[i] == indent_of(ent[c]) + ']')
