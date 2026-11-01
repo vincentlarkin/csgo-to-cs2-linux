@@ -46,7 +46,7 @@ Workshop Tools  ──▶  publish
 
    Compile single assets (vmat, vtex, vsndevts, the `.js` rules script) with `rc.sh -game csgo -i 'Z:\...\file' -f`.
 5. **Build.** `PRESET=test NOVIS=1 build.sh <addon> <map>` gives a 25-second preview. Use `PRESET=final` for release.
-6. **Test.** `play.sh <addon> <map> custom -netconport 2121`. Then run `buildcubemaps` in the console. Don't skip it.
+6. **Test.** `play.sh <addon> <map> custom -netconport 2121`. Then run `buildcubemaps` in the console (or use `cubemaps.sh <addon> <map>`). Don't skip it.
 7. **Screenshot.** `con.py 2 "sv_cheats 1" "noclip" "cl_drawhud 0" "r_drawviewmodel 0"`, then `shoot.sh out.png "x y z" "pitch yaw 0"`.
 8. **Publish** from the Workshop Tools window, after the pre-publish checks in FINDINGS.md.
 
@@ -60,6 +60,7 @@ Workshop Tools  ──▶  publish
 | `rc_each.sh` | Compile every `.vmat` of an addon one at a time, retrying a crash |
 | `build.sh` | Headless map compile: geometry, physics, vis, nav and baked lighting. `PRESET=test\|final`, `NOVIS=1` |
 | `play.sh` | Launch CS2 in tools mode on an addon map in casual/competitive/deathmatch/custom |
+| `cubemaps.sh` | Launch an addon map, run `buildcubemaps`, wait until the vpk is rewritten, leave a clean noclip camera for `shoot.sh` |
 | `focus_cs2.sh` | Raise the CS2 window on KDE Plasma (Wayland too) so it renders for screenshots |
 | `con.py`, `shoot.sh`, `shot2png.py` | Send console commands over `-netconport`; take a screenshot from a fixed camera; fix the TGA's swapped red/blue |
 | `bspsrc.sh` | BSPSource CLI on native Java |
