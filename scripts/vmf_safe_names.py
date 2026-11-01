@@ -6,7 +6,12 @@ import os, re, sys
 
 MAP = {'{': 'alpha_', '~': 'lit_', '+': 'anim_', '-': 'rand_'}
 def safe(name):
-    out = ''.join(MAP.get(c, c) if not (c.isalnum() or c in '_.') else c for c in name)
+    # GoldSrc prefix characters ({fence, ~light, +0anim, -0tile) become words; anything else odd becomes _
+    i = 0
+    out = ''
+    while i < len(name) and name[i] in MAP:
+        out += MAP[name[i]]; i += 1
+    out += ''.join(c if (c.isalnum() or c in '_.') else '_' for c in name[i:])
     return out.lower()
 
 root = sys.argv[1]
