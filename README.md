@@ -8,7 +8,7 @@ There was one catch: Valve's map tools only run on Windows, and this was done on
 
 ## What we accomplished
 
-It worked. Five old maps are now playable in CS2. Subscribe on the Steam Workshop and they show up in your game:
+It worked. Five old maps have been ported to CS2. The published ones are on the Steam Workshop: subscribe and they show up in your game.
 
 | Map | Originally made by | What it is | Play the CS2 version |
 | --- | --- | --- | --- |
@@ -53,7 +53,8 @@ Each one plays like the original:
 
 You'll need:
 - CS2 with the free **Workshop Tools** add-on, running through Proton
-- Python 3
+- Python 3 with Pillow
+- Java 17 or newer, for BSPSource (the map decompiler)
 - Some comfort with the terminal
 
 Every step is in GUIDE.md. Expect some trial and error: old maps are all a little different.
