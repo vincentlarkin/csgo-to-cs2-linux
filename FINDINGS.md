@@ -121,6 +121,7 @@ These are the things that went wrong, or weren't obvious, while porting five CS:
 What Workshop Tools uploads is the **game** addon folder (`game/csgo_addons/<addon>/`), minus `cfg/`, `ServerConfig.vdf`, `tools_*` and the `_`-prefixed caches. Before publishing:
 
 - **`addoninfo.txt`**: its `"maps"` key should name the final map, not the importer's `_d` test map.
+- **Importer logs ship too.** `source1import -logwarnings` writes `source1importwarnings_lastrun.txt`, `source1importlibwarnings_log.txt` and `source1import_blacklistedfiles_lastrun.txt` into the **game** addon folder, and they contain your local `Z:\home\<user>\...` paths. `import_map.sh` moves them into the staging folder. Check by hand if you ran the importer yourself.
 - **Stale outputs ship too.** Old map vpks (`maps/<map>_d.vpk`) and compiled materials you no longer use (`materials/**/*.vmat_c`, `*.vtex_c`) get uploaded. Move them out.
 - **Privacy.** Download your own published item and unpack it (`vpkx.py`, twice, since the map vpk is nested inside):
   - What came through clean: no emails, IPs, SteamIDs, hostnames or project paths. Texture references are relative.

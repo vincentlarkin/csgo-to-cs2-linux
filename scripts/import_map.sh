@@ -12,4 +12,6 @@ mkdir -p "$C/content/csgo_addons/$addon" "$C/game/csgo_addons/$addon"
 cp "$C/content/csgo_addons/$addon/maps/${map}_refs.txt" "$stage/refs.txt"
 "$(dirname "$0")/import.sh" -retail -nop4 -nop4sync -logwarnings -src1gameinfodir "$(z "$stage/csgo")" \
     -s2addon "$addon" -game csgo -usefilelist "$(z "$stage/refs.txt")" > "$stage/import_mats.log" 2>&1
+# -logwarnings writes its logs into the *game* addon folder, which Workshop Tools uploads; they hold local paths
+mv "$C/game/csgo_addons/$addon"/source1import*.txt "$stage/" 2>/dev/null || true
 echo "imported $(find "$C/content/csgo_addons/$addon" -type f | wc -l) files into content/csgo_addons/$addon"
